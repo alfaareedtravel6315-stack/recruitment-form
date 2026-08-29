@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Inquiry Form</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <main class="recruitment-form-section">
+        <div class="form-container">
+
+            <header class="form-header">
+                <h1>Recruitment Inquiry Form</h1>
+                <p>Submit your details and our team will get in touch with you shortly.</p>
+            </header>
+
+            <form id="recruitmentForm" novalidate>
+
+                <div class="form-grid">
+
+                    <div class="form-field">
+                        <label for="name">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="location">Current Location</label>
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            autocomplete="address-level2"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="subject">Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field form-field-full">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="7"
+                        ></textarea>
+                    </div>
+
+                </div>
+
+                <div class="form-action">
+                    <button type="submit">Send Message</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- Main JavaScript -->
+    <script src="../javascript/script.js"></script>
+</body>
+</html>
 
