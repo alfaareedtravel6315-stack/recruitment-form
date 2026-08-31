@@ -1,43 +1,82 @@
 /* =========================================================
    RECRUITMENT INQUIRY FORM
-   Easy-edit settings are kept here in one place.
+   Bootstrap Responsive + Easy Edit Settings
    ========================================================= */
 
 :root {
-    /* Main editable colors */
+
+    /* =========================
+       EASY-EDIT COLORS
+       ========================= */
+
     --heading-color: #221668;
-    --text-color: #434343;
+    --subheading-color: #434343;
+    --form-text-color: #221668;
+
     --maroon: #7a2630;
-    --form-background: #f9e9ec;
+
+    /* One shade darker than the previous background */
+    --form-background: #f4e1e5;
+
     --input-background: #ffffff;
 
-    /* Editable typography */
-    --font-family: Arial, Helvetica, sans-serif;
-    --heading-size: 15px;
-    --subheading-size: 11px;
-    --label-size: 11px;
-    --input-size: 11px;
-    --button-size: 11px;
 
-    /* Editable layout */
+    /* =========================
+       EASY-EDIT TYPOGRAPHY
+       ========================= */
+
+    --font-family: Arial, Helvetica, sans-serif;
+
+    --heading-size: 24px;
+    --subheading-size: 13px;
+
+    --label-size: 13px;
+    --input-size: 13px;
+    --button-size: 13px;
+
+
+    /* =========================
+       EASY-EDIT FORM WIDTH
+       ========================= */
+
     --container-width: 860px;
-    --container-padding-top: 38px;
+
+    --container-padding-top: 28px;
     --container-padding-right: 32px;
-    --container-padding-bottom: 50px;
+    --container-padding-bottom: 28px;
     --container-padding-left: 32px;
 
-    --column-gap: 24px;
-    --row-gap: 24px;
-    --label-gap: 9px;
 
-    --input-height: 54px;
-    --message-height: 180px;
+    /* =========================
+       EASY-EDIT SPACING
+       ========================= */
 
-    --button-width: 190px;
-    --button-height: 50px;
+    --column-gap: 20px;
+    --row-gap: 16px;
+    --label-gap: 6px;
+
+
+    /* =========================
+       EASY-EDIT FIELD HEIGHT
+       ========================= */
+
+    --input-height: 42px;
+    --message-height: 120px;
+
+
+    /* =========================
+       EASY-EDIT BUTTON
+       ========================= */
+
+    --button-width: 180px;
+    --button-height: 44px;
 }
 
-/* Basic reset */
+
+/* =========================================================
+   BASIC RESET
+   ========================================================= */
+
 * {
     box-sizing: border-box;
 }
@@ -49,192 +88,299 @@ html {
 body {
     margin: 0;
     padding: 0;
+
     font-family: var(--font-family);
-    color: var(--text-color);
+    color: var(--form-text-color);
     background: #ffffff;
 }
 
-/* Main centered section */
+
+/* =========================================================
+   MAIN FORM SECTION
+   ========================================================= */
+
 .recruitment-form-section {
     width: 100%;
+    margin: 0;
     padding: 0;
 }
 
-/* Main form container */
+
+/* =========================================================
+   MAIN FORM CONTAINER
+   ========================================================= */
+
 .form-container {
-    width: min(var(--container-width), calc(100% - 32px));
+    width: min(
+        var(--container-width),
+        calc(100% - 32px)
+    );
+
     margin: 0 auto;
+
     padding:
         var(--container-padding-top)
         var(--container-padding-right)
         var(--container-padding-bottom)
         var(--container-padding-left);
+
     background: var(--form-background);
 }
 
-/* Heading + subheading */
+
+/* =========================================================
+   HEADING + SUBHEADING
+   ========================================================= */
+
 .form-header {
+    margin: 0 0 22px;
+    padding: 0;
+
     text-align: center;
-    margin: 0 0 30px;
 }
 
 .form-header h1 {
     margin: 0;
     padding: 0;
+
     font-family: var(--font-family);
     font-size: var(--heading-size);
-    line-height: 1.25;
+    line-height: 1.2;
     font-weight: 700;
+
     color: var(--heading-color);
 }
 
 .form-header p {
-    margin: 8px 0 0;
+    margin: 7px 0 0;
     padding: 0;
+
     font-family: var(--font-family);
     font-size: var(--subheading-size);
-    line-height: 1.15;
+    line-height: 1.3;
     font-weight: 400;
-    color: var(--text-color);
+
+    color: var(--subheading-color);
 }
 
-/* Two-column form structure */
+
+/* =========================================================
+   BOOTSTRAP FORM GRID
+   ========================================================= */
+
 .form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--column-gap);
+    margin-left: 0;
+    margin-right: 0;
+
     row-gap: var(--row-gap);
 }
 
 .form-field {
     min-width: 0;
+    padding-left: calc(var(--column-gap) / 2);
+    padding-right: calc(var(--column-gap) / 2);
 }
 
-/* Labels stay normal and left-aligned */
+
+/* =========================================================
+   FORM LABELS
+   ========================================================= */
+
 .form-field label {
     display: block;
+
     margin: 0 0 var(--label-gap);
     padding: 0;
+
     font-family: var(--font-family);
     font-size: var(--label-size);
     line-height: 1.2;
     font-weight: 400;
-    color: var(--text-color);
+
+    color: var(--form-text-color);
     text-align: left;
 }
 
-/*
-   IMPORTANT:
-   Inputs and textarea have NO visible border in their normal state.
-   A transparent border is reserved only to prevent layout movement.
-   On focus, the border becomes maroon.
-*/
+
+/* =========================================================
+   INPUTS + TEXTAREA
+   ========================================================= */
+
 .form-field input,
 .form-field textarea {
     display: block;
+
     width: 100%;
     margin: 0;
-    padding: 12px 14px;
+
+    padding: 10px 12px;
+
     border: 1px solid transparent;
     border-radius: 4px;
+
     outline: none;
+
     background: var(--input-background);
+
     font-family: var(--font-family);
     font-size: var(--input-size);
-    line-height: 1.4;
+    line-height: 1.35;
     font-weight: 400;
-    color: var(--text-color);
+
+    color: var(--form-text-color);
+
     box-shadow: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
 }
+
+
+/* Normal input height */
 
 .form-field input {
     height: var(--input-height);
 }
 
+
+/* Message box */
+
 .form-field textarea {
     min-height: var(--message-height);
     height: var(--message-height);
+
     resize: vertical;
 }
 
-/* No lines, brackets, underlines, or decorative borders */
+
+/* Focus */
+
 .form-field input:focus,
 .form-field textarea:focus {
     border-color: var(--maroon);
     box-shadow: none;
 }
 
-/* Full-width message field */
-.form-field-full {
-    grid-column: 1 / -1;
-}
 
-/* Send button */
+/* =========================================================
+   SEND MESSAGE BUTTON
+   ========================================================= */
+
 .form-action {
     display: flex;
+
     justify-content: center;
-    margin-top: 30px;
+    align-items: center;
+
+    margin-top: 20px;
 }
 
 .form-action button {
     width: var(--button-width);
     height: var(--button-height);
+
     padding: 0 18px;
+
     border: 0;
     border-radius: 5px;
+
     outline: none;
     cursor: pointer;
+
     background: var(--maroon);
     color: #ffffff;
+
     font-family: var(--font-family);
     font-size: var(--button-size);
     line-height: 1;
     font-weight: 700;
-    transition: opacity 0.2s ease, transform 0.15s ease;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.15s ease;
 }
+
+
+/* Hover */
 
 .form-action button:hover {
     opacity: 0.88;
 }
 
+
+/* Click */
+
 .form-action button:active {
     transform: translateY(1px);
 }
 
+
+/* Keyboard focus */
+
 .form-action button:focus-visible {
-    box-shadow: 0 0 0 2px rgba(122, 38, 48, 0.25);
+    box-shadow:
+        0 0 0 2px rgba(122, 38, 48, 0.25);
 }
 
-/* Simple required-field browser fallback */
-.form-field input:invalid:not(:focus):not(:placeholder-shown) {
-    border-color: transparent;
-}
 
 /* =========================================================
-   Responsive layout
-   Same design and sizing logic on mobile; only columns stack.
+   MOBILE RESPONSIVE
+   Bootstrap handles the main column stacking.
+   Custom CSS only adjusts spacing for smaller screens.
    ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 767.98px) {
+
     .form-container {
-        width: min(var(--container-width), calc(100% - 24px));
+        width: calc(100% - 20px);
+
         padding:
-            var(--container-padding-top)
-            20px
-            var(--container-padding-bottom)
-            20px;
+            22px
+            16px
+            22px
+            16px;
+    }
+
+    .form-header {
+        margin-bottom: 18px;
+    }
+
+    .form-field {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .form-grid {
-        grid-template-columns: 1fr;
+        row-gap: 14px;
     }
 
-    .form-field-full {
-        grid-column: auto;
+    .form-action {
+        margin-top: 18px;
     }
 
     .form-action button {
-        width: min(var(--button-width), 100%);
+        width: min(
+            var(--button-width),
+            100%
+        );
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE SCREENS
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .form-container {
+        width: calc(100% - 12px);
+
+        padding:
+            20px
+            12px
+            20px
+            12px;
     }
 }
