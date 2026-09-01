@@ -384,3 +384,38 @@ body {
             12px;
     }
 }
+/* =========================================================
+   TEST: SAME DESKTOP CONTAINER PRESERVATION
+   MOBILE + TABLET
+   ========================================================= */
+
+/* MOBILE */
+@media (max-width: 767.98px) {
+
+    .form-container {
+        width: 640px;
+        height: 495.466px;
+
+        padding:
+            28px
+            32px
+            28px
+            32px;
+    }
+}
+
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .form-container {
+        width: 640px;
+        height: 495.466px;
+
+        padding:
+            28px
+            32px
+            28px
+            32px;
+    }
+}
